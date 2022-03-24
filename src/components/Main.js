@@ -1,8 +1,9 @@
 import api from "../utils/Api.js";
 import React from "react";
-// import { useEffect } from 'react';
 import Card from "./Card.js";
+
 function Main(props) {
+
   // Стейт, в котором содержится значение
   const [userName, setuserName] = React.useState("");
   const [userDescription, setuserDescription] = React.useState("");
@@ -104,11 +105,12 @@ function Main(props) {
       <section className="content">
         {cards.map((card) => (
           <Card
-            card={card}
+            // card={card}
             key={card.id}
             link={card.link}
             name={card.name}
             likes={card.likes}
+            // onCardClick={onCardClick}
           />
         ))}
       </section>

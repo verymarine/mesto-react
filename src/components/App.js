@@ -38,9 +38,10 @@ function App() {
   }
 
   // Обработчик открытия попапа Большой картинки обновляет стейт
-  // function handleCardClick(){
-  //   setselectedCard(card);
-  // }
+  function handleCardClick(card) {
+    setselectedCard({name: card.name, link: card.link});
+    // setselectedCard(card);
+  }
 
   // Обработчик закрытия попапа обновляет стейт
   function closeAllPopups() {
@@ -52,37 +53,21 @@ function App() {
 
   return (
     <div>
-      <body className="page">
-        <Header />
-        <Main
-          onEditProfile={handleEditProfileClick}
-          onAddPlace={handleAddPlaceClick}
-          onEditAvatar={handleEditAvatarClick}
-          // onCardClick={handleCardClick}
-          // onClose={closeAllPopups}
-        />
-        <Footer />
-        <PopupAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
-        <PopupEditProfile
-          isOpen={isEditProfilePopupOpen}
-          onClose={closeAllPopups}
-        />
-        <PopupAddCard isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
-        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-        <template className="template">
-          <article className="content__grid">
-            <img className="content__image" />
-            <div className="content__info">
-              <h2 className="content__title">Карачаевск</h2>
-              <div className="like__area">
-                <button className="content__like" type="button"></button>
-                <p className="content__like-counter">0</p>
-              </div>
-              <button className="content__trashcan" type="button"></button>
-            </div>
-          </article>
-        </template>
-      </body>
+      <Header />
+      <Main
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick}
+        onCardClick={handleCardClick}
+      />
+      <Footer />
+      <PopupAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
+      <PopupEditProfile
+        isOpen={isEditProfilePopupOpen}
+        onClose={closeAllPopups}
+      />
+      <PopupAddCard isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
+      <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </div>
   );
 }
