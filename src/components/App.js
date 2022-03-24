@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import "../App.css";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,75 +8,67 @@ import PopupAddCard from "./PopupAddCard";
 import PopupAvatar from "./PopupAvatar";
 import PopupEditProfile from "./PopupEditProfile";
 
-
-
-
-
 function App() {
-
-   
-// Стейт, в котором содержится значение 
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  // Стейт, в котором содержится значение попапов
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
+    React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] =
+    React.useState(false);
 
-  // Стейт, в котором содержится значение 
-  const [selectedCard, setselectedCard] = React.useState({name: '', link: ''});
+  // Стейт, в котором содержится значение выбранной карточки
+  const [selectedCard, setselectedCard] = React.useState({
+    name: "",
+    link: "",
+  });
 
-   // Обработчик изменения инпута обновляет стейт
-    function handleEditAvatarClick(){
-      setIsEditAvatarPopupOpen(true);
-      }
-    
-       // Обработчик изменения инпута обновляет стейт
-    function handleEditProfileClick(){
-        setIsEditProfilePopupOpen(true);
-      }
-    
-       // Обработчик изменения инпута обновляет стейт
-    function handleAddPlaceClick(){
-        setIsAddPlacePopupOpen(true);
-      }
+  // Обработчик открытия попапа Аватара обновляет стейт
+  function handleEditAvatarClick() {
+    setIsEditAvatarPopupOpen(true);
+  }
 
-       // Обработчик изменения инпута обновляет стейт
-      // function handleCardClick(){
-      //   setselectedCard(card);
-      // }
+  // Обработчик открытия попапа Редактирование профиля обновляет стейт
+  function handleEditProfileClick() {
+    setIsEditProfilePopupOpen(true);
+  }
 
-       // Обработчик изменения инпута обновляет стейт
-      function closeAllPopups(){
-        setIsEditAvatarPopupOpen(false);
-        setIsEditProfilePopupOpen(false);
-        setIsAddPlacePopupOpen(false);
-        setselectedCard({name: '', link: ''});
+  // Обработчик открытия попапа Добавить Место обновляет стейт
+  function handleAddPlaceClick() {
+    setIsAddPlacePopupOpen(true);
+  }
 
-      }
+  // Обработчик открытия попапа Большой картинки обновляет стейт
+  // function handleCardClick(){
+  //   setselectedCard(card);
+  // }
+
+  // Обработчик закрытия попапа обновляет стейт
+  function closeAllPopups() {
+    setIsEditAvatarPopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setselectedCard({ name: "", link: "" });
+  }
 
   return (
     <div>
       <body className="page">
-        <Header/>
+        <Header />
         <Main
-          onEditProfile={handleEditProfileClick} 
+          onEditProfile={handleEditProfileClick}
           onAddPlace={handleAddPlaceClick}
           onEditAvatar={handleEditAvatarClick}
           // onCardClick={handleCardClick}
           // onClose={closeAllPopups}
         />
-        <Footer/>
-        <PopupAvatar isOpen={isEditAvatarPopupOpen}
-        onClose={closeAllPopups}
+        <Footer />
+        <PopupAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
+        <PopupEditProfile
+          isOpen={isEditProfilePopupOpen}
+          onClose={closeAllPopups}
         />
-        <PopupEditProfile isOpen={isEditProfilePopupOpen}
-        onClose={closeAllPopups}
-        />
-        <PopupAddCard isOpen={isAddPlacePopupOpen}
-        onClose={closeAllPopups}
-        />
-        <ImagePopup 
-        card={selectedCard}
-        onClose={closeAllPopups}
-        />
+        <PopupAddCard isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
+        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
         <template className="template">
           <article className="content__grid">
             <img className="content__image" />
