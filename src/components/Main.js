@@ -110,6 +110,7 @@ function Main(props) {
             link={card.link}
             name={card.name}
             likes={card.likes}
+            onCardClick={props.onCardClick}
             // onCardClick={onCardClick}
           />
         ))}

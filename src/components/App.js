@@ -40,7 +40,9 @@ function App() {
   // Обработчик открытия попапа Большой картинки обновляет стейт
   function handleCardClick(card) {
     setselectedCard({name: card.name, link: card.link});
+ 
     // setselectedCard(card);
+    console.log('RRRRRRR', card);
   }
 
   // Обработчик закрытия попапа обновляет стейт
