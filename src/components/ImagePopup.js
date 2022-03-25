@@ -1,9 +1,11 @@
 function ImagePopup(props) {
   return (
     <div
-      className={`popup popup_picture ${
-        props.card !=={ name: "", link: "" } ? "popup_opened" : ""
-      }`}
+    className={`popup popup_picture ${props.card.name && props.card.link && "popup_opened"}`}
+    
+      // className={`popup popup_picture ${
+      //   !props.card ? "popup_opened" : ""
+      // }`}
       // className={`popup popup_picture ${
       //   props.card.name && props.card.link ? "popup_opened" : ""
       // }`}
@@ -14,8 +16,8 @@ function ImagePopup(props) {
           type="button"
           onClick={props.onClose}
         ></button>
-        <img className="popup__image" src={props.link} />
-        <h2 className="popup__capture">{props.name}</h2>
+        <img className="popup__image" src={props.card.link} alt={props.card.name} />
+        <h2 className="popup__capture">{props.card.name}</h2>
       </div>
     </div>
   );

@@ -17,8 +17,8 @@ function PopupAddCard(props) {
             type="text"
             name="name"
             id="place-data"
-            minlength="2"
-            maxlength="30"
+            minLength="2"
+            maxLength="30"
             required
           />
           <span className="popup__input-error" id="place-data-error"></span>

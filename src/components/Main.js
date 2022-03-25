@@ -105,7 +105,7 @@ function Main(props) {
       <section className="content">
         {cards.map((card) => (
           <Card
-            // card={card}
+            card={card}
             key={card.id}
             link={card.link}
             name={card.name}

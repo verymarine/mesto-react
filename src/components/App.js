@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import ImagePopup from "./ImagePopup";
@@ -39,9 +38,9 @@ function App() {
 
   // Обработчик открытия попапа Большой картинки обновляет стейт
   function handleCardClick(card) {
-    setselectedCard({name: card.name, link: card.link});
+    // setselectedCard({name: card.name, link: card.link});
  
-    // setselectedCard(card);
+    setselectedCard(card);
     console.log('RRRRRRR', card);
   }
 
