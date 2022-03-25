@@ -1,14 +1,8 @@
 function ImagePopup(props) {
   return (
+    // спасибо за ревью	°˖✧◝(⁰▿⁰)◜✧˖°
     <div
     className={`popup popup_picture ${props.card.name && props.card.link && "popup_opened"}`}
-    
-      // className={`popup popup_picture ${
-      //   !props.card ? "popup_opened" : ""
-      // }`}
-      // className={`popup popup_picture ${
-      //   props.card.name && props.card.link ? "popup_opened" : ""
-      // }`}
     >
       <div className="popup__block">
         <button

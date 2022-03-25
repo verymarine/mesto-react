@@ -111,7 +111,6 @@ function Main(props) {
             name={card.name}
             likes={card.likes}
             onCardClick={props.onCardClick}
-            // onCardClick={onCardClick}
           />
         ))}
       </section>
