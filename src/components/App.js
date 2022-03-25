@@ -41,7 +41,6 @@ function App() {
     // setselectedCard({name: card.name, link: card.link});
  
     setselectedCard(card);
-    console.log('RRRRRRR', card);
   }
 
   // Обработчик закрытия попапа обновляет стейт
