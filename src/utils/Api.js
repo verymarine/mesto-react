@@ -54,30 +54,36 @@ class Api {
     }).then(response);
   }
 
-
   putLike(dataId) {
     return fetch(`${this._url}/cards/${dataId}/likes`, {
-    method: 'PUT',
-    headers: this._headers
-    }).then(response)
+      method: "PUT",
+      headers: this._headers,
+    }).then(response);
   }
 
   deleteLike(dataId) {
     return fetch(`${this._url}/cards/${dataId}/likes`, {
-    method: 'DELETE',
-    headers: this._headers
-    }).then(response)
+      method: "DELETE",
+      headers: this._headers,
+    }).then(response);
+  }
+
+  changeLikeCardStatus(dataId, isLiked) {
+    return fetch(`${this._url}/cards/${dataId}/likes`, {
+      method: `${isLiked ? "PUT" : "DELETE"}`,
+      headers: this._headers,
+    }).then(response);
   }
 
   patchAvatar(data) {
     return fetch(`${this._url}/users/me/avatar`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: this._headers,
 
       body: JSON.stringify({
-        avatar: data.avatar
-      })
-      }).then(response)
+        avatar: data.avatar,
+      }),
+    }).then(response);
   }
 
   // postCards(data) {
@@ -121,4 +127,3 @@ const api = new Api({
 });
 
 export default api;
-

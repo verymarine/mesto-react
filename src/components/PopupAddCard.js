@@ -1,6 +1,26 @@
+import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function PopupAddCard(props) {
+  const [name, setName] = React.useState("");
+  const [link, setLink] = React.useState("");
+
+  function handleChangeName(e) {
+    setName(e.target.value);
+  }
+
+  function handleChangeLink(e) {
+    setLink(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    props.onAddPlace({
+      name,
+      link,
+    });
+  }
   return (
     <PopupWithForm
       name="add"
@@ -8,10 +28,13 @@ function PopupAddCard(props) {
       isOpen={props.isOpen}
       onClose={props.onClose}
       textButton="Создать"
+      onSubmit={handleSubmit}
     >
       <fieldset className="popup__set">
         <label className="popup__field">
           <input
+            value={`${name}`}
+            onChange={handleChangeName}
             className="popup__input popup__input_type_place"
             placeholder="Название"
             type="text"
@@ -25,6 +48,8 @@ function PopupAddCard(props) {
         </label>
         <label className="popup__field">
           <input
+            value={`${link}`}
+            onChange={handleChangeLink}
             className="popup__input popup__input_type_link"
             placeholder="Ссылка на картинку"
             type="url"
@@ -34,7 +59,6 @@ function PopupAddCard(props) {
           />
           <span className="popup__input-error" id="url-data-error"></span>
         </label>
-        {/* <button class="popup__button" type="submit">Создать</button> */}
       </fieldset>
     </PopupWithForm>
   );

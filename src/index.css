@@ -28,6 +28,7 @@
 @import url(./blocks/content/__like-counter/content__like-counter.css);
 @import url(./blocks/content/__title/content__title.css);
 @import url(./blocks/content/__trashcan/content__trashcan.css);
+@import url(./blocks/content/__trashcan/_type/content__trashcan_type_hidden.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);

@@ -1,8 +1,9 @@
 function ImagePopup(props) {
   return (
-    // спасибо за ревью	°˖✧◝(⁰▿⁰)◜✧˖°
     <div
-    className={`popup popup_picture ${props.card.name && props.card.link && "popup_opened"}`}
+      className={`popup popup_picture ${
+        props.card.name && props.card.link && "popup_opened"
+      }`}
     >
       <div className="popup__block">
         <button
@@ -10,7 +11,11 @@ function ImagePopup(props) {
           type="button"
           onClick={props.onClose}
         ></button>
-        <img className="popup__image" src={props.card.link} alt={props.card.name} />
+        <img
+          className="popup__image"
+          src={props.card.link}
+          alt={props.card.name}
+        />
         <h2 className="popup__capture">{props.card.name}</h2>
       </div>
     </div>
