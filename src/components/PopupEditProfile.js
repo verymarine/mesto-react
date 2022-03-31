@@ -11,7 +11,7 @@ function PopupEditProfile(props) {
   React.useEffect(() => {
     setName(currentUser.name);
     setDescription(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, props.isOpen]);
 
   const [name, setName] = React.useState("");
   const [description, setDescription] = React.useState("");
@@ -47,8 +47,7 @@ function PopupEditProfile(props) {
       <fieldset className="popup__set">
         <label className="popup__field">
           <input
-            // value={name || ''}
-            value={`${name}`}
+            value={name || ''}
             onChange={handleChangeName}
             className="popup__input popup__input_type_name"
             placeholder="Имя"
@@ -63,8 +62,7 @@ function PopupEditProfile(props) {
         </label>
         <label className="popup__field">
           <input
-            // value={description || ''}
-            value={`${description}`}
+            value={description || ''}
             onChange={handleChangeDescription}
             className="popup__input popup__input_type_job"
             placeholder="О себе"

@@ -24,7 +24,7 @@ function App() {
   });
 
   // Стейт, в котором содержится значение Пользователя
-  const [currentUser, setCurrentUser] = React.useState("");
+  const [currentUser, setCurrentUser] = React.useState({});
 
   // Стейт, в котором содержится значение
   const [cards, setCards] = React.useState([]);
